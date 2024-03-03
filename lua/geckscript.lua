@@ -1,7 +1,6 @@
 local M = {};
 
 function M.setup(opts)
-    opts = opts or {}
     vim.filetype.add({
         extension = {
             gek = "geckscript",
@@ -10,11 +9,7 @@ function M.setup(opts)
     })
 
     local util = require("lspconfig.util")
-
-    local cmd = { "node", "out/server.js", "--stdio" }
-    if opts.tree_view_server then
-        table.insert(cmd, "--tree-view-server")
-    end
+    local cmd = { "geckscript-lsp", "--stdio" }
 
     local default_config = {
         default_config = {
@@ -35,7 +30,7 @@ function M.setup(opts)
 
     local configs = require("lspconfig.configs")
     configs["geckscript-lsp"] = default_config
-    configs["geckscript-lsp"].setup({})
+    configs["geckscript-lsp"].setup(opts)
 end
 
 return M
