@@ -7,7 +7,7 @@ highlighting for geckscript for Neovim
 
 Requires [lsp-config](https://github.com/neovim/nvim-lspconfig)
 
-You can install the language server [npm](https://www.npmjs.com/package/geckscript-lsp)
+You can install the language server via [npm](https://www.npmjs.com/package/geckscript-lsp)
 
 ```sh
 npm i -g geckscript-lsp
